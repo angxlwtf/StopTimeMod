@@ -1,6 +1,7 @@
 ﻿using System;
 using Hazel;
 using System.Collections.Generic;
+using UnityEngine;
 using System.Linq;
 using static StopTime.ImpostorRole;
 using HarmonyLib;
@@ -59,6 +60,7 @@ namespace StopTime
                     if (timeFreeze && !PlayerControl.LocalPlayer.Data.IsImpostor)
                     {
                         PlayerControl.LocalPlayer.MyPhysics.Speed = PlayerControl.LocalPlayer.MyPhysics.Speed / 10000;
+                        HudManager.Instance.FullScreen.color = Color.blue;
                     }
                     else if (!PlayerControl.LocalPlayer.Data.IsImpostor)
                     {
